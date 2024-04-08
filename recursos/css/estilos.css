@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,500;1,700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+
+
+    background: #ba8b02; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #181818cc, #ba8c02d3),
+      url("../img/bg_login.png"); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1818189a, #ba8c0285),
+      url("../img/bg_login.png"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+
+footer{
+    background-color: #000000;
+
+}
+
+.fondo{
+    color:aliceblue;
+}
+.centro p{
+    color: white !important;
+}
+
+/* Header */
+.estilo-imagen {
+  width: 100px;
+  border-radius: 100%;
+  /* Agrega más estilos según sea necesario */
+}
+
+
+
+.contenedor_marquee{
+    color: white;
+    background-color: black;
+}
+
+
+
+/* Main */
+
+
+
+.contenedor_panico{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+
+.contenedor_boton{
+    width: 600px !important;
+}
+
+.panico{
+    text-align: center;
+    font-size: x-large;
+}
+.botonP{
+    margin: 0;
+    padding: 0;
+    border-style: none !important;
+    }
+
+.boton{
+font-size: xx-large;
+}
+
+
+.chat{
+    padding-bottom: 2rem;
+}
+

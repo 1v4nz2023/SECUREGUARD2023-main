@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./admin2.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../../recursos/bootstrap/bootstrap.min.css">
+    <title>Alertas</title>
+    
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../../../recursos/img/logo full color.png" style="size: 1px;margin-top: 2 px;" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">SecureGuard</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="./visitas.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Visitas</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./solicitudes.html">
+                            <i class='bx bx-mail-send icon' ></i>
+                            <span class="text nav-text">Solicitudes</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./mensajes.html">
+                            <i class='bx bx-envelope icon'></i>
+                            <span class="text nav-text">Mensajes</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./alertas.html">
+                            <i class='bx bx-error-circle icon' ></i>
+                            <span class="text nav-text">Alertas</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./chat.html">
+                            <i class='bx bx-conversation icon' ></i>
+                            <span class="text nav-text">Chat</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Cerrar Sesión</span>
+                    </a>
+                </li>                
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <div class="text">Alertas</div>
+        <div class="m-4 p-4 bg-white rounded-3 shadow-sm">
+            <div class="contenedor_panico">
+                <div class="card contenedor_boton" style="width: 18rem;">
+                  <button class="botonP" value="1" type="submit" id="activar"><img src="https://img.freepik.com/fotos-premium/boton-panico-inscripcion_406939-4228.jpg?w=2000" class="card-img-top" alt="panic"></button>
+                  <div class="card-body panico ">
+                    <h1 class="card-title">Botón de pánico</h1>
+                    <p class="card-text">Presione panic para activar la alarma</p>
+                        <button value="0" type="submit" id="desactivar" class="btn btn-danger boton">Desactivar</button>
+                  </div>
+                </div>            
+              </div>        </div>
+    </section>
+
+
+    <script>
+        const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+    
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Claro";
+    }else{
+        modeText.innerText = "Oscuro";
+        
+    }
+});
+    </script>
+    <script src="../../../recursos/bootstrap/bootstrap.min.js"></script>
+    <script src="../../../recursos/bootstrap/popper.min.js"></script>
+    <script src="../../../recursos/js/alarma/alarma.js"></script>
+    <script src="../../../recursos/js/login/login.js"></script>
+</body>
+</html>

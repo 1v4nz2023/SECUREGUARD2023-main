@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../recursos/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../recursos/css/estilos.css">
+    <link rel="icon" type="image/x-icon" href="../../recursos/img/sglogo.ico">
+    <link rel="stylesheet" href="../../recursos/css/style2.css">
+    <script src="../../../recursos/bootstrap/popper.min.js"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+    <script src="../../recursos/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../../recursos/datatable/dataTables.min.css">
+    
+    <title>SecureGuard</title>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #ffdc6a;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="foto">
+        </a>
+  
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="title">      
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#subirfoto">Editar perfil</a></li>
+            <li><a class="dropdown-item" href="#"data-bs-toggle="modal" data-bs-target="#regvisitas">Programar visita</a></li>
+            <li><a class="dropdown-item" href="#"data-bs-toggle="modal" data-bs-target="#regdelivery">Programar delivery</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#cerrarsesion">Cerrar sesión</a></li>
+  
+          </ul>
+        </div>
+        
+        <!-- Modal de cerrar sesión -->
+  <div class="modal fade" id="cerrarsesion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Cerrar sesión</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         ¿Está seguro de cerrar la sesión?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" id="endSesion">Sí</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+        <!-- Modal de registrar visitas -->
+        <div class="modal fade" id="regvisitas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Programar visita</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+  
+  
+                <form class="login__formulario">
+                  <div class="mb-3">
+                    <label for="nombres" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" aria-describedby="emailHelp" required>
+                  </div>
+          
+                  <div class="mb-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="dni" class="form-label">DNI</label>
+                      <input type="number" class="form-control" id="dni" required>
+                    </div>
+          
+                  <div class="mb-3">
+                      <label for="telefono" class="form-label">Teléfono</label>
+                      <input type="number" class="form-control" id="telefono">
+                    </div>
+          
+                    <div class="mb-3">
+                      <label for="date" class="form-label">Fecha</label>
+                      <input type="date" class="form-control" id="fecha">
+          
+                    </div>
+          
+                      <div class="mb-3">
+                          <label for="time" class="form-label">Hora</label>
+                          <input type="time" class="form-control" id="hora">
+                      </div>
+                      <div class="mb-3">
+                          <label for="motivo" class="form-label">Motivo</label>
+                          <input type="text" class="form-control input-lg" id="motivo">
+                      </div>       
+                      <br> 
+                  <button type="submit" class="btn btn-primary" id="sendvisitas">Enviar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="modal fade" id="regdelivery" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Programar delivery</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+  
+                <form class="login__formulario">
+                  <div class="mb-3">
+                    <label for="nombres2" class="form-label">Empresa</label>
+                    <input type="text" class="form-control" id="empresa" aria-describedby="emailHelp" required>
+                  </div>
+          
+                  <div class="mb-3">
+                    <label for="apellidos2" class="form-label">Tipo de Vehiculo</label>
+                    <input type="text" class="form-control" id="vehiculo" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="contacto" class="form-label">Contacto</label>
+                      <input type="text" class="form-control" id="contacto" required>
+                    </div>
+          
+                    <div class="mb-3">
+                      <label for="date2" class="form-label">Fecha</label>
+                      <input type="date" class="form-control" id="fecha2">
+          
+                    </div>
+          
+                      <div class="mb-3">
+                          <label for="time2" class="form-label">Hora</label>
+                          <input type="time" class="form-control" id="hora2">
+                      </div>
+                <br>
+                  <button type="submit" class="btn btn-primary" id="sendelivery">Enviar</button>
+                </form>
+  
+              
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+  
+        <!-- Modal de actualizar foto -->
+        <div class="modal fade" id="subirfoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar perfil</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <div class="mb-3">
+                  <label for="formFileSm" class="form-label"></label>
+                  <input class="form-control form-control-sm" id="archivo" type="file">
+                </div>
+                <img src="" alt="" id="preview" class="img-fluid" style="width: 300px;">
+  
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="savephoto">Guardar</button>
+                <button type="button" class="btn btn-danger" id="deletephoto">Borrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+  
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-3 ">
+            <a class="nav-link"   href="../panel/adminpanel/adminpanel.html">Inicio</a>
+            <a class="nav-link  "  href="../alarma/alarma.html">Alarma</a>
+            <a class="nav-link " href="../visitas/visitas.html" id="pagvisitas1">Delivery</a>
+            <a class="nav-link" href="../chat/chat.html">Chat</a>
+            <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+            <a class="nav-link active" aria-current="page" href="#" id="pagvisitas">Visitas</a>
+  
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main >
+    <br>
+    <div class="container datatables">
+        <table id="myTable" style="width:100%" class="display responsive no-wrap">
+            <thead>
+                <tr>
+                    <th>VECINO</th>
+                    <th>NOMBRES</th>
+                    <th>APELLIDOS</th> 
+                    <th>DNI</th>  
+                    <th>TELEFONO</th> 
+                    <th>FECHA</th>      
+                    <th>HORA</th>             
+                    <th>MOTIVO</th>       
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+  </main>
+  <footer class="text-body-secondary py-5 footer" >
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#" class="fondo">Al inicio</a>
+      </p>
+      <p class="mb-1 fondo">Desarrollado por Grupo 3 © 2023</p>
+    </div>
+  </footer>
+<!-- The core Firebase JS SDK is always required and must be listed first 
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>-->
+
+<!-- <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script> -->
+  
+    <script src="../../recursos/bootstrap/bootstrap.min.js"></script>
+    <script src="../../recursos/bootstrap/popper.min.js"></script>
+    <script src="../../recursos/datatable/dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script type="module" src="../../recursos/js/solicitudes/solicitudes.js"></script>
+    <script type="module" src="../../recursos/js/login/cerrarsesion.js"></script>
+    <script type="module" src="../../recursos/js/login/obtenerusuario.js"></script>
+    <script type="module" src="../../../recursos/js/userconfig/userconfig.js"></script>
+    <script type="module" src="../../../recursos/js/visitas/visitas.js"></script>
+    <script type="module" src="../../recursos/js/visitas/delivery.js"></script>
+    <script type="module" src="../../recursos/js/solicitudes/solicitudes.js"></script>
+
+</body>
+

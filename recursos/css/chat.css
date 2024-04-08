@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+
+  .chat-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .message {
+    background-color: #e5f7ff;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+
+  .sender {
+    font-weight: bold;
+    margin-bottom: 4px;
+    
+  }
+
+  .message-text {
+    margin: 0;
+  }
+
+  .received {
+    background-color: #dcf8c6;
+    align-self: flex-end ;
+  }
+
+  .timestamp {
+    font-size: 0.8em;
+    color: #888;
+  }
